@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en" data-lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>AI Replacement Map — How exposed is your job? | AI 替代地图</title>
+
+<!-- SEO · GEO -->
+<meta name="description" content="Hand-curated map of ~90 occupations scored on AI-exposure across four axes — routine cognitive, routine physical, non-routine cognitive, non-routine interpersonal. One analyst's read, methodology in the open. Bilingual EN / 中文.">
+<meta name="keywords" content="AI replacement, AI automation, job exposure, future of work, AI risk, AI exposure score, occupational risk, BLS, O*NET, AI 替代, AI 自动化, 未来工作, 职业 AI 风险">
+<meta name="author" content="Gewenbo">
+<link rel="canonical" href="https://ai-replacement-map.psyverse.fun/">
+<link rel="alternate" hreflang="en" href="https://ai-replacement-map.psyverse.fun/">
+<link rel="alternate" hreflang="zh-CN" href="https://ai-replacement-map.psyverse.fun/">
+<link rel="alternate" hreflang="x-default" href="https://ai-replacement-map.psyverse.fun/">
+<meta property="og:title" content="AI Replacement Map — How exposed is your job?">
+<meta property="og:description" content="A hand-curated map of ~90 occupations scored on AI-exposure across four axes. Methodology in the open. Bilingual EN / 中文.">
+<meta property="og:url" content="https://ai-replacement-map.psyverse.fun/">
+<meta property="og:site_name" content="Psyverse">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI Replacement Map · AI 替代地图">
+<meta name="twitter:description" content="How exposed is your job to AI? Sortable, filterable, methodology in the open.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0b0c10">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "AI Replacement Map",
+  "description": "Hand-curated map of ~90 occupations scored on AI-exposure across four axes.",
+  "url": "https://ai-replacement-map.psyverse.fun/",
+  "inLanguage": ["en", "zh-CN"],
+  "author": { "@type": "Person", "name": "Gewenbo", "url": "https://psyverse.fun/" },
+  "publisher": { "@type": "Organization", "name": "Psyverse", "url": "https://psyverse.fun/" }
+}
+</script>
+<!-- /SEO · GEO -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='4' fill='%230b0c10'/><circle cx='10' cy='8' r='3' fill='%234ec98a'/><circle cx='10' cy='16' r='3' fill='%23e8b35c'/><circle cx='10' cy='24' r='3' fill='%23e8634a'/><rect x='16' y='6' width='12' height='4' rx='1' fill='%234ec98a' opacity='0.4'/><rect x='16' y='14' width='9' height='4' rx='1' fill='%23e8b35c' opacity='0.6'/><rect x='16' y='22' width='14' height='4' rx='1' fill='%23e8634a' opacity='0.8'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+<script src="https://analytics-dashboard-two-blue.vercel.app/tracker.js" defer></script>
+</head>
+<body>
+
+<!-- ===== Topbar ===== -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="#" class="brand">
+      <span class="seal">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="8" r="3" fill="var(--safe)"/>
+          <circle cx="10" cy="16" r="3" fill="var(--warn)"/>
+          <circle cx="10" cy="24" r="3" fill="var(--hot)"/>
+          <rect x="16" y="6" width="12" height="4" rx="1" fill="var(--safe)" opacity="0.5"/>
+          <rect x="16" y="14" width="9" height="4" rx="1" fill="var(--warn)" opacity="0.7"/>
+          <rect x="16" y="22" width="14" height="4" rx="1" fill="var(--hot)" opacity="0.8"/>
+        </svg>
+      </span>
+      <span lang="en">AI Replacement<em> Map</em></span>
+      <span lang="zh">AI 替代<em>地图</em></span>
+    </a>
+    <nav class="nav">
+      <a href="#methodology"><span lang="en">Methodology</span><span lang="zh">方法</span></a>
+      <a href="#tiers"><span lang="en">Tiers</span><span lang="zh">分级</span></a>
+      <a href="#map"><span lang="en">Map</span><span lang="zh">地图</span></a>
+      <a href="#sectors"><span lang="en">By sector</span><span lang="zh">按行业</span></a>
+      <a href="#qa"><span lang="en">Q&amp;A</span><span lang="zh">问答</span></a>
+    </nav>
+    <div class="toolbar">
+      <div class="theme-toggle"><button data-theme-set="light">◐</button><button data-theme-set="dark" class="active">◑</button></div>
+      <div class="lang-toggle"><button data-lang="en" class="active">EN</button><button data-lang="zh">中文</button></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== Hero ===== -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span lang="en">Hand-curated · 100+ occupations · 4-axis methodology in the open</span>
+    <span lang="zh">手工编制 · 百余项职业 · 公开四轴方法</span>
+  </div>
+  <h1>
+    <span lang="en">How exposed is your job to <em>AI</em>?</span>
+    <span lang="zh">你的职业有多<em>暴露</em>于 AI？</span>
+  </h1>
+  <p class="hero-sub">
+    <span lang="en">Sortable, filterable, searchable. Each occupation gets a 0–100 composite plus four sub-scores. Click any card to read the analytical reasoning.</span>
+    <span lang="zh">可排序、可筛选、可搜索。每项职业附 0–100 综合分及四项子分。点击任意卡片阅读分析理由。</span>
+  </p>
+  <div class="hero-disclaimer">
+    <span lang="en">// methodology disclosure: this is one analyst's structural read, not a forecast. Scores are hand-set against a transparent rubric (below). Use as a frame for discussion, not as a personal career prediction. Public occupation taxonomy adapted from US BLS / O*NET; analytical scoring is original.</span>
+    <span lang="zh">// 方法说明：本表为一名分析者的结构性研判，并非预测。每项分数依下文公开评分细则手工设定。可作讨论框架，不应作为个人职业预测使用。职业分类参考美国劳工统计局 / O*NET 公开数据；分析性评分为原创。</span>
+  </div>
+</section>
+
+<!-- ===== Methodology ===== -->
+<section id="methodology">
+  <div class="section-eyebrow"><span lang="en">01 · Methodology</span><span lang="zh">01 · 方法</span></div>
+  <h2 class="section-title"><span lang="en">Four axes, scored 0–100 each</span><span lang="zh">四个轴，各自 0–100 评分</span></h2>
+  <p class="section-lede"><span lang="en">The framing follows the labour-economics literature on routine vs non-routine task content. The composite score gives one summary number, but the four sub-scores are where the actual reasoning lives.</span><span lang="zh">沿用劳动经济学关于例行 vs 非例行任务结构的研究框架。综合分给出一个总览数字，但实际的推理在四项子分之中。</span></p>
+
+  <div class="method">
+    <div class="method-axes">
+      <div class="method-axis rcog">
+        <div class="ax-name">R-COG · routine cognitive</div>
+        <div class="ax-desc"><span lang="en">Repeatable text, data, or symbol manipulation following a clear rule. Drafting, summarising, indexing, scheduling, classifying, calculating.</span><span lang="zh">遵循明确规则的可重复文本、数据或符号操作。起草、摘要、索引、排程、分类、计算。</span></div>
+      </div>
+      <div class="method-axis rphy">
+        <div class="ax-name">R-PHY · routine physical</div>
+        <div class="ax-desc"><span lang="en">Repeatable physical motion in a structured environment. Assembly, sorting, picking, stamping, transport along fixed routes.</span><span lang="zh">在结构化环境中的可重复物理动作。装配、分拣、拣选、印章、固定路线运输。</span></div>
+      </div>
+      <div class="method-axis nrcog">
+        <div class="ax-name">NR-COG · non-routine cognitive</div>
+        <div class="ax-desc"><span lang="en">Judgment under ambiguity, novel synthesis, framing the right question, deciding what to ignore. The defensive moat against substitution.</span><span lang="zh">不确定性下的判断、新颖综合、提出正确问题、决定什么可以忽略。抗替代的护城河。</span></div>
+      </div>
+      <div class="method-axis nrint">
+        <div class="ax-name">NR-INT · non-routine interpersonal</div>
+        <div class="ax-desc"><span lang="en">Embodied presence, empathy, dexterity in unstructured settings. Care, persuasion, performance, on-site repair, clinical contact.</span><span lang="zh">具身临在、同理心、于非结构化情境中的灵巧操作。照护、说服、表演、现场维修、临床接触。</span></div>
+      </div>
+    </div>
+    <div>
+      <div class="method-formula">
+        <div style="margin-bottom: 14px; color: var(--ink); font-weight: 600;"><span lang="en">// composite intuition</span><span lang="zh">// 综合分直觉</span></div>
+        <span lang="en">
+          <span class="accent3">exposure</span> ≈ 0.50 × R-COG + 0.30 × R-PHY<br>
+          &nbsp;&nbsp;&nbsp;− 0.40 × NR-COG − 0.30 × NR-INT<br>
+          &nbsp;&nbsp;&nbsp;rebased to 0–100 then hand-calibrated<br><br>
+          <span class="accent">low</span> &nbsp;&nbsp;= 0–39 &nbsp; AI augments, role survives<br>
+          <span class="accent2">moderate</span> = 40–59 &nbsp; significant tasks shift to AI<br>
+          <span class="accent3">high</span> &nbsp;= 60–79 &nbsp; majority of role substitutable<br>
+          <span class="accent3">critical</span> = 80+ &nbsp;&nbsp; market for the role contracts hard
+        </span>
+        <span lang="zh">
+          <span class="accent3">暴露度</span> ≈ 0.50 × R-COG + 0.30 × R-PHY<br>
+          &nbsp;&nbsp;&nbsp;− 0.40 × NR-COG − 0.30 × NR-INT<br>
+          &nbsp;&nbsp;&nbsp;映射至 0–100 后人工校准<br><br>
+          <span class="accent">低</span>&nbsp;&nbsp;&nbsp;= 0–39 &nbsp; AI 增强，岗位存续<br>
+          <span class="accent2">中</span>&nbsp;&nbsp;&nbsp;= 40–59 &nbsp; 大量任务转入 AI<br>
+          <span class="accent3">高</span>&nbsp;&nbsp;&nbsp;= 60–79 &nbsp; 多数职责可被替代<br>
+          <span class="accent3">极高</span>= 80+ &nbsp;&nbsp; 岗位市场显著收缩
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Tier legend ===== -->
+<section id="tiers">
+  <div class="section-eyebrow"><span lang="en">02 · Four tiers</span><span lang="zh">02 · 四级</span></div>
+  <h2 class="section-title"><span lang="en">What each tier means in plain language</span><span lang="zh">各级的意义（平实语）</span></h2>
+
+  <div class="tier-legend">
+    <div class="tier-cell safe">
+      <div class="tier-bar"></div>
+      <div class="tier-range">0 – 39</div>
+      <div class="tier-name"><span lang="en">Low</span><span lang="zh">低</span></div>
+      <div class="tier-desc"><span lang="en">AI accelerates parts of the job. The role itself stays human and likely grows.</span><span lang="zh">AI 加速工作中的部分环节。岗位本身仍属人，可能扩张。</span></div>
+    </div>
+    <div class="tier-cell moderate">
+      <div class="tier-bar"></div>
+      <div class="tier-range">40 – 59</div>
+      <div class="tier-name"><span lang="en">Moderate</span><span lang="zh">中</span></div>
+      <div class="tier-desc"><span lang="en">Significant tasks migrate to AI. Practitioner output multiplies; headcount likely thins.</span><span lang="zh">大量任务迁移至 AI。从业者产出倍增；总人数趋于减少。</span></div>
+    </div>
+    <div class="tier-cell high">
+      <div class="tier-bar"></div>
+      <div class="tier-range">60 – 79</div>
+      <div class="tier-name"><span lang="en">High</span><span lang="zh">高</span></div>
+      <div class="tier-desc"><span lang="en">Majority of routine duties substitutable. Senior, judgment-heavy layer survives; junior rungs shrink.</span><span lang="zh">多数常规职责可被替代。高级 / 重判断层留存；初级阶梯收窄。</span></div>
+    </div>
+    <div class="tier-cell critical">
+      <div class="tier-bar"></div>
+      <div class="tier-range">80 +</div>
+      <div class="tier-name"><span lang="en">Critical</span><span lang="zh">极高</span></div>
+      <div class="tier-desc"><span lang="en">Role market contracts hard. Many positions disappear; remaining work concentrates in exception-handling.</span><span lang="zh">岗位市场显著收缩。多数职位消失；剩余工作集中于异常处理。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Map ===== -->
+<section id="map">
+  <div class="section-eyebrow"><span lang="en">03 · The Map</span><span lang="zh">03 · 地图</span></div>
+  <h2 class="section-title"><span lang="en">Click any card to read the reasoning</span><span lang="zh">点击任意卡片阅读理由</span></h2>
+  <p class="section-lede"><span lang="en">Search by title or sector. Filter by sector and exposure tier. Sort by exposure (high or low first), alphabetically, or grouped by sector. Each card shows the composite score, the four sub-scores, and unfolds with the analytical note.</span><span lang="zh">按标题或行业搜索。按行业与暴露级筛选。按暴露度（高或低优先）、字母、或行业分组排序。每张卡片显示综合分、四项子分；点击展开分析说明。</span></p>
+
+  <div class="map-controls">
+    <div class="search-wrap">
+      <input id="job-search" type="text" placeholder="" />
+    </div>
+    <select class="sort-select" id="job-sort">
+      <option value="exposure-desc">▼ exposure (high → low)</option>
+      <option value="exposure-asc">▲ exposure (low → high)</option>
+      <option value="alpha">A–Z</option>
+      <option value="sector">by sector</option>
+    </select>
+    <div class="result-count" id="result-count"></div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+    <div class="filter-chips" id="sector-chips" aria-label="Sector filter"></div>
+    <div class="filter-chips" id="tier-chips" aria-label="Tier filter"></div>
+  </div>
+
+  <div class="jobs-grid" id="jobs-grid"></div>
+</section>
+
+<!-- ===== Sector summary ===== -->
+<section id="sectors">
+  <div class="section-eyebrow"><span lang="en">04 · By Sector</span><span lang="zh">04 · 按行业</span></div>
+  <h2 class="section-title"><span lang="en">Average exposure per sector (within this dataset)</span><span lang="zh">本数据集内各行业平均暴露度</span></h2>
+  <p class="section-lede"><span lang="en">Sectors are ranked by mean composite exposure across the occupations sampled here. The pattern: anything that's mostly text-and-rules ranks high; anything that requires presence, dexterity, or unsanctioned judgment ranks low.</span><span lang="zh">行业按本数据集中所抽样职业的平均综合暴露度排序。规律：以文本与规则为主者排名靠前；要求临在、灵巧或非授权判断者排名靠后。</span></p>
+
+  <div class="sector-chart" id="sector-chart"></div>
+</section>
+
+<!-- ===== Q&A ===== -->
+<section id="qa">
+  <div class="section-eyebrow"><span lang="en">∞ · Q&amp;A</span><span lang="zh">∞ · 问答</span></div>
+  <h2 class="section-title"><span lang="en">Five questions, answered honestly</span><span lang="zh">五问，诚实作答</span></h2>
+
+  <div class="ai-panel">
+    <div class="ai-q"><span lang="en">Is this an actual prediction?</span><span lang="zh">这是预测吗？</span></div>
+    <div class="ai-a">
+      <span lang="en">No. It is a structural read by one analyst against a public methodology. The numbers are hand-set, calibrated against the four sub-scores per the formula above, and capped at one analyst's confidence. Use it as a discussion frame, not as advice for your specific career. Real outcomes depend on geography, regulation, employer choices, and the speed of capability shifts that nobody currently models well.</span>
+      <span lang="zh">否。这是一名分析者依公开方法所作的结构性研判。数字按上文公式与四项子分手工设定与校准，上限止于一名分析者的信心。请作为讨论框架使用，不应作为针对你个人职业的建议。真实结果取决于地理、监管、雇主选择，以及目前无人能很好建模的能力推进速度。</span>
+    </div>
+
+    <div class="ai-q"><span lang="en">Why hand-curated instead of model-generated?</span><span lang="zh">为何手工编制而非模型生成？</span></div>
+    <div class="ai-a">
+      <span lang="en">Because every published auto-rated job-exposure list I've seen is dominated by the model's own training-data biases. Hand scoring forces a transparent rubric, an explicit per-row rationale, and a small enough surface that any wrong row can be challenged and revised by name. ~90 occupations is the size where one analyst can actually defend each entry. A 20,000-row auto-rated list is much bigger but defends none.</span>
+      <span lang="zh">因为我所见到的每一份自动评分的职业暴露榜单都被模型自身的训练数据偏见所主导。手工评分迫使评分量表透明、每行有明确理由、表面足够小以便每一行都可被指名质疑与修订。约 90 项是一名分析者真正能为每一条目辩护的规模。两万行的自动榜单虽大，但没有一行是可辩护的。</span>
+    </div>
+
+    <div class="ai-q"><span lang="en">What's the most over- and under-rated category here?</span><span lang="zh">这里最被高估与最被低估的类别是？</span></div>
+    <div class="ai-a">
+      <span lang="en">Overrated by the public (= my scores are lower than the panic): teacher, nurse, therapist, surgeon, plumber, electrician. Each requires presence and judgment in unstructured settings — exactly what current AI is worst at. Underrated by the public (= my scores are higher than the comfort): paralegal, contract reviewer, insurance underwriter, junior copywriter, junior financial analyst. Each is mostly text-and-rules, which is exactly where current AI is strongest.</span>
+      <span lang="zh">公众高估者（即我的分数低于恐慌）：教师、护士、心理治疗师、外科医生、水管工、电工。每者皆要求在非结构化情境中的临在与判断——正是当前 AI 最差之处。公众低估者（即我的分数高于安慰）：律师助理、合同审阅者、保险核保员、初级文案、初级金融分析师。每者皆以文本与规则为主，正是当前 AI 最强之处。</span>
+    </div>
+
+    <div class="ai-q"><span lang="en">What does "exposed" actually mean for an individual?</span><span lang="zh">'暴露'对个人到底意味着什么？</span></div>
+    <div class="ai-a">
+      <span lang="en">It means three structurally distinct things, often conflated. (a) Augmentation — your output multiplies and your job changes shape; pay can go up. (b) Headcount thinning — the same total work is done by fewer people; some get cut. (c) Total displacement — the role disappears as a market category. The same composite score can map to any of the three depending on demand elasticity, regulation, and employer choices. A high score means "watch this category"; it does not mean "you specifically will be replaced." Mid-career workers should optimise for the part of their job that requires NR-COG and NR-INT.</span>
+      <span lang="zh">它意味着三件结构上不同的事，常被混为一谈。(a) 增强——你的产出倍增，工作形态改变；薪酬可能上升。(b) 人员削减——同样的总工作由更少的人完成；部分被裁。(c) 全面位移——岗位作为市场类别消失。同一综合分依需求弹性、监管、雇主选择，可对应三者中任一。高分意味着'关注此类别'；并非'你个人将被替代'。中段从业者应优化工作中需要 NR-COG 与 NR-INT 的部分。</span>
+    </div>
+
+    <div class="ai-q"><span lang="en">What jobs are missing — and what would change the scores?</span><span lang="zh">遗漏了哪些职业？什么会改变这些分数？</span></div>
+    <div class="ai-a">
+      <span lang="en">Missing: most blue-collar field roles (firefighter sub-types, fishing, agriculture), most narrow specialists (actuaries, surveyors, audiologists), and most jobs that exist mostly outside the BLS taxonomy (gig work, content creators, professional gamers, ritual workers). The dataset is biased toward roles legible to the US labour-statistics frame; readers should adjust accordingly. Things that would change the scores fast: a single robust tabletop physical-task model (would lower R-PHY and raise composite for plumber, nurse aide, etc.); regulatory carve-outs for specific professions (would freeze scores in legal, medical, financial advisory); and any genuine self-improving model release (would raise NR-COG-resistance bar significantly). Watch those three signals.</span>
+      <span lang="zh">遗漏：多数体力现场岗位（消防员细分、渔业、农业）、多数窄类专家（精算师、测量员、听力学家），以及主要存在于 BLS 分类之外的职业（零工、内容创作者、电竞选手、仪式工作者）。本数据集偏向美国劳动统计可识别的岗位；读者应据此调整。能快速改变这些分数的事项：一个真正可靠的台架物理任务模型（将降低水管工、护理员等的 R-PHY 并抬升综合分）；针对特定行业的监管豁免（将冻结法律、医疗、财顾的分数）；以及任何真正自我改进模型的发布（将显著抬高 NR-COG 抗替代的标杆）。关注这三个信号。</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <span lang="en">Built by <a href="https://psyverse.fun">Gewenbo</a> · part of the Psyverse</span>
+    <span lang="zh">由 <a href="https://psyverse.fun">Gewenbo</a> 制作 · Psyverse 之一</span>
+  </div>
+  <div>
+    <a href="https://github.com/gewenbo888/ai-replacement-map">GitHub</a>
+    · <a href="https://psyverse.fun">psyverse.fun</a>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
